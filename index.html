@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepa Electronic – Next-Gen Tech Store</title>
+    <meta name="description"
+        content="Deepa Electronic – Shop the latest gadgets, phones, laptops & accessories with unbeatable deals." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet" />
+    <!-- Matter.js physics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- GRAVITY CANVAS (overlay) -->
+    <canvas id="gravity-canvas"></canvas>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div id="gravity-bar">
+        <button class="gbtn" id="btn-gravity" onclick="activateGravity()">Anti-Gravity 🚀</button>
+        <button class="gbtn" id="btn-reset" onclick="resetGravity()">Reset 🔄</button>
+    </div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="site-header">
+        <div class="logo">Deepa <span>Electronic</span></div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact" class="nav-cta">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero">
+        <div class="hero-glow glow-1"></div>
+        <div class="hero-glow glow-2"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge fade-up delay-1">⚡ New Arrivals 2025 — Shop Now</div>
+
+            <h1 class="hero-title fade-up delay-2">
+                Next-Gen Tech,<br />
+                <span class="gradient-text">Delivered Fast.</span>
+            </h1>
+
+            <p class="hero-sub fade-up delay-3">
+                Explore the latest smartphones, laptops, gadgets &amp; accessories —
+                all at unbeatable prices with lightning-fast delivery.
+            </p>
+
+            <div class="hero-btns fade-up delay-4">
+                <button class="btn-primary"
+                    onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+                    Shop Now →
+                </button>
+                <button class="btn-outline"
+                    onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="hero-stats fade-up delay-4">
+                <div class="stat-item">
+                    <h3>50K+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2K+</h3>
+                    <p>Products</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99%</h3>
+                    <p>Satisfaction</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="orbit-ring orbit-1"></div>
+            <div class="orbit-ring orbit-2"></div>
+            <div class="center-icon">💻</div>
+        </div>
+    </section>
+
+    <!-- ===================== PRODUCTS ===================== -->
+    <section id="products">
+        <div class="section-label">⚡ Featured Products</div>
+        <h2 class="section-title">
+            Top Picks <span class="gradient-inline">This Week</span>
+        </h2>
+        <p class="section-sub">
+            Hand-picked from thousands of listings — the best tech at the best prices.
+        </p>
+
+        <div class="products-grid" id="products-grid">
+
+            <div class="product-card">
+                <span class="product-badge badge-new">NEW</span>
+                <span class="product-icon">📱</span>
+                <div class="product-name">ProMax Ultra X</div>
+                <div class="product-desc">6.7" AMOLED, 200MP camera, 5G, 5000 mAh battery.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹79,999</div>
+                        <div class="product-old-price">₹99,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-hot">HOT</span>
+                <span class="product-icon">💻</span>
+                <div class="product-name">SlateBook Pro 15</div>
+                <div class="product-desc">Intel i9, 32 GB RAM, 1 TB SSD, OLED display.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹1,24,999</div>
+                        <div class="product-old-price">₹1,49,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-sale">SALE</span>
+                <span class="product-icon">🎧</span>
+                <div class="product-name">SoundCore Pro ANC</div>
+                <div class="product-desc">Active noise cancellation, 40 hr battery, Hi-Res Audio.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹12,499</div>
+                        <div class="product-old-price">₹19,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-new">NEW</span>
+                <span class="product-icon">⌚</span>
+                <div class="product-name">PulseWatch Ultra</div>
+                <div class="product-desc">Health monitoring, GPS, 7-day battery, waterproof.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹24,999</div>
+                        <div class="product-old-price">₹34,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-hot">HOT</span>
+                <span class="product-icon">📷</span>
+                <div class="product-name">SnapMaster 4K</div>
+                <div class="product-desc">Mirrorless, 45 MP sensor, 8K video, dual-card slot.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹89,999</div>
+                        <div class="product-old-price">₹1,09,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-sale">SALE</span>
+                <span class="product-icon">🖥️</span>
+                <div class="product-name">UltraView 32" Monitor</div>
+                <div class="product-desc">4K IPS, 144 Hz, HDR600, USB-C power delivery.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹34,999</div>
+                        <div class="product-old-price">₹49,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-new">NEW</span>
+                <span class="product-icon">🎮</span>
+                <div class="product-name">GamePad Elite X</div>
+                <div class="product-desc">Wireless, haptic feedback, 20 hr play, PC &amp; console.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹8,999</div>
+                        <div class="product-old-price">₹12,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge badge-hot">HOT</span>
+                <span class="product-icon">📡</span>
+                <div class="product-name">WiFi 6E Router</div>
+                <div class="product-desc">Tri-band, 10 Gbps, AI mesh support, 3000 sqft coverage.</div>
+                <div class="product-footer">
+                    <div>
+                        <div class="product-price">₹14,999</div>
+                        <div class="product-old-price">₹18,999</div>
+                    </div>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+        <div class="about-grid">
+
+            <div class="about-visual">
+                <div class="about-card ac1">
+                    <div class="aicon">🏆</div>
+                    <h4>10+ Years</h4>
+                    <p>Trusted electronics retailer since 2014</p>
+                </div>
+                <div class="about-card ac2">
+                    <div class="aicon">🚚</div>
+                    <h4>Same Day</h4>
+                    <p>Delivery within city limits</p>
+                </div>
+                <div class="about-card ac3">
+                    <div class="aicon">🛡️</div>
+                    <h4>2-Year Warranty</h4>
+                    <p>On all products, no questions asked</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-label">✨ About Us</div>
+                <h2 class="section-title">
+                    Why Choose <span class="gradient-inline">Deepa?</span>
+                </h2>
+                <div class="neon-divider"></div>
+                <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-bottom:24px;">
+                    Deepa Electronic has been at the forefront of consumer electronics retail for over a decade.
+                    We bring you the latest and greatest in tech, curated and verified by our team of experts.
+                </p>
+
+                <div class="about-features">
+                    <div class="feat-item">
+                        <div class="feat-icon">✅</div>
+                        <div class="feat-text">
+                            <h5>100% Genuine Products</h5>
+                            <p>All items are sourced directly from authorized distributors with verified authenticity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-icon">💰</div>
+                        <div class="feat-text">
+                            <h5>Best Price Guarantee</h5>
+                            <p>Find it cheaper elsewhere? We'll match the price instantly — no hassle.</p>
+                        </div>
+                    </div>
+                    <div class="feat-item">
+                        <div class="feat-icon">🔧</div>
+                        <div class="feat-text">
+                            <h5>Expert Support</h5>
+                            <p>Our tech-savvy team is available 24/7 to help you choose and set up your devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="testimonials">
+        <div class="section-label">💬 Reviews</div>
+        <h2 class="section-title">
+            What Our <span class="gradient-inline">Customers Say</span>
+        </h2>
+        <p class="section-sub" style="margin-bottom:48px;">
+            Real reviews from happy customers across India.
+        </p>
+
+        <div class="testi-grid">
+
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">
+                    "Got my laptop delivered the same day! Packaging was perfect and the price was way better
+                    than anywhere else. Deepa is my go-to for all electronics."
+                </p>
+                <div class="testi-author">
+                    <div class="testi-avatar">A</div>
+                    <div>
+                        <div class="testi-name">Arjun Sharma</div>
+                        <div class="testi-role">Software Engineer, Bangalore</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">
+                    "Amazing customer support! They helped me pick the right phone for my budget.
+                    The 2-year warranty gave me so much peace of mind. Highly recommended!"
+                </p>
+                <div class="testi-author">
+                    <div class="testi-avatar">P</div>
+                    <div>
+                        <div class="testi-name">Priya Nair</div>
+                        <div class="testi-role">Content Creator, Mumbai</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">
+                    "Bought a gaming controller — the best price I found online or offline. Arrived fast,
+                    product is genuine. Will definitely shop here again and again!"
+                </p>
+                <div class="testi-author">
+                    <div class="testi-avatar">R</div>
+                    <div>
+                        <div class="testi-name">Rohit Mehta</div>
+                        <div class="testi-role">Gaming Enthusiast, Delhi</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact">
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <div class="section-label">📬 Get In Touch</div>
+                <h2 class="section-title" style="font-size:36px;">
+                    Let's Talk<br /><span class="gradient-inline">Electronics!</span>
+                </h2>
+                <p>
+                    Have a question or special order? We'd love to hear from you.
+                    Reach out and our team will respond within 1 hour.
+                </p>
+                <div class="contact-item"><span class="cicon">📍</span><span>12, Tech Plaza, MG Road, Bangalore –
+                        560001</span></div>
+                <div class="contact-item"><span class="cicon">📞</span><span>+91 98765 43210</span></div>
+                <div class="contact-item"><span class="cicon">✉️</span><span>hello@deepaelectronic.in</span></div>
+                <div class="contact-item"><span class="cicon">🕐</span><span>Mon–Sat: 9AM–9PM | Sun: 10AM–6PM</span>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleForm(event)">
+                <input id="cf-name" class="form-input" type="text" placeholder="Your Name" required />
+                <input id="cf-email" class="form-input" type="email" placeholder="Email Address" required />
+                <input id="cf-subject" class="form-input" type="text" placeholder="Subject" />
+                <textarea id="cf-msg" class="form-textarea" placeholder="Your Message…" required></textarea>
+                <button type="submit" class="btn-primary" style="align-self:flex-start">Send Message →</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div>
+            <div class="logo" style="font-size:20px;margin-bottom:6px;">Deepa <span>Electronic</span></div>
+            <p style="font-size:13px;">© 2025 Deepa Electronic. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Careers</a>
+        </div>
+    </footer>
+
+    <!-- External JS (loaded last so DOM is ready) -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
