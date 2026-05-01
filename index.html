@@ -68,6 +68,9 @@
                     onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
                     Learn More
                 </button>
+                <button class="btn-outline" onclick="window.voiceflow.chat.open()" style="border-color: var(--neon-blue); color: var(--neon-blue);">
+                    Chat with AI 🤖
+                </button>
             </div>
 
             <div class="hero-stats fade-up delay-4">
@@ -342,28 +345,6 @@
         </div>
     </section>
 
-    <!-- ===================== CHATBOT ===================== -->
-    <section id="chatbot">
-        <div class="hero-glow glow-1" style="top: 20%; right: -10%;"></div>
-        <div class="section-label">🤖 AI Assistant</div>
-        <h2 class="section-title">
-            Have Questions? <span class="gradient-inline">Chat with Us</span>
-        </h2>
-        <p class="section-sub">
-            Our AI expert is here to help you pick the right electronics and answer any technical queries 24/7.
-        </p>
-
-        <div class="chatbot-container fade-up">
-            <iframe
-                src="https://www.chatbase.co/chatbot-iframe/ks1siIyXesNeo2bSf8lUs"
-                width="100%"
-                style="height: 100%; min-height: 700px"
-                frameborder="0"
-                id="chatbase-iframe"
-            ></iframe>
-        </div>
-    </section>
-
     <section id="contact">
         <div class="contact-grid">
 
@@ -411,7 +392,26 @@
 
     <!-- External JS (loaded last so DOM is ready) -->
     <script src="script.js"></script>
-
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '69e86b20b10d288250d6aecf' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              },
+              appearance: {
+                title: 'Deepa Assistant',
+                description: 'Electronics Expert',
+                color: '#00d4ff',
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
 </body>
-
 </html>
